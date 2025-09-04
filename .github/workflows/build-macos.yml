@@ -47,6 +47,8 @@ jobs:
           cmakeBuildType: Release
           cmakeGenerator: UnixMakefiles
           buildDirectory: '${{runner.workspace}}/build'
+          buildWithCMake: true
+          buildWithCMakeArgs: -- -j$(sysctl -n hw.ncpu)
         env:
           CC: gcc-14
           CXX: g++-14
